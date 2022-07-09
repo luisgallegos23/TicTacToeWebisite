@@ -5,7 +5,7 @@ body{
     color: black;
     z-index: 1;
     background-color: rgba(255,255,255,0.90);
-    height: 40em;
+    height: 45em;
     width: 30em;
     position: absolute;
     top: 50%;
@@ -28,7 +28,7 @@ body{
     height: 25em;
     width: 25em;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -46,4 +46,35 @@ p{
     font-size: 20px;
     border-radius: 10px;
     
+}
+
+.grid-container{
+    height: 25em;
+    width: 25em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    display: inline-grid;
+    align-content: center;
+    grid-template-columns: 8.33em 8.33em 8.33em;
+    grid-template-rows: 8.33em 8.33em 8.33em;
+    grid-gap: 4px;
+    color: black;
+    padding: 15px 15px;
+    box-shadow: 0px 0px 30px black,0px 0px 30px white,0px 0px 30px black;
+    border-radius: 17px;
+}
+
+.grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    font-size: 5em;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    font-weight: bold;
 }
