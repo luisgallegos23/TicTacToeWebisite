@@ -50,9 +50,10 @@ input[type=button]{
     position:absolute;
     bottom: 4em;
     left: 9em;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.grid-container{
+#grid-container{
     height: 25em;
     width: 25em;
     position: absolute;
