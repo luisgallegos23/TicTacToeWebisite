@@ -22,18 +22,18 @@
        </div>
        <input id="play-button" type="button" value="PLAY GAME" onclick="showBoard()">
 
-       <div id="grid-container" style="display:none">
-            <div class="grid"> X </div>
-            <div class="grid"> X </div>
-            <div class="grid"> X </div>
-            <div class="grid"> O </div>
-            <div class="grid"> O </div>
-            <div class="grid"> O </div>
-            <div class="grid"> X </div>
-            <div class="grid"> X </div>
-            <div class="grid"> X </div>
+       <div id="grid-container">
+            <div id = "b1" class="grid" onclick="changeValue(this.id)"> - </div>
+            <div id = "b2" class="grid" onclick="changeValue(this.id)"> - </div>
+            <div id = "b3" class="grid" onclick="changeValue(this.id)"> - </div>
+            <div id = "b4" class="grid" onclick="changeValue(this.id)"> - </div>
+            <div id = "b5 "class="grid" onclick="changeValue(this.id)"> - </div>
+            <div id = "b6" class="grid" onclick="changeValue(this.id)"> - </div>
+            <div id = "b7" class="grid" onclick="changeValue(this.id)"> - </div>
+            <div id = "b8" class="grid" onclick="changeValue(this.id)"> - </div>
+            <div id = "b9" class="grid" onclick="changeValue(this.id)"> - </div>
         </div>
-        <input id="reset-button" type="button" value="RESET" style="display:none">
+        <input id="reset-button" type="button" value="RESET">
     </div>
     <script src="actions.js"></script>
 </body>
