@@ -17,11 +17,21 @@ function showBoard(){
 //document.getElementsByClassName('grid').addEventListener('click', 
 function changeValue (id) {
     console.log(id);
-    if(player == 1){
+    if(player == 1 && validClicked(id) ){
         document.getElementById(id).innerHTML = "X";
         player = 2;
-    }else if(player == 2){
+    }else if(player == 2 && validClicked(id) ){
         document.getElementById(id).innerHTML = "O";
         player = 1;
+    }
+}
+
+function validClicked(id){
+    var valid = document.getElementById(id).innerHTML;
+    console.log(valid)
+    if(valid !== " - "){
+        return false;
+    }else{
+        return true;
     }
 }
