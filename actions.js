@@ -2,7 +2,7 @@ var player = 1;
 var board = [
     ['-','-','-'],
     ['-','-','-'],
-    ['-','-','-']
+    ['-','-','-'],
 ];
 
 //Hides the board upon the window loading 
@@ -16,7 +16,7 @@ window.onload = function (){
 function showBoard(){
     document.getElementById('insturctions').style.display = "none";
     document.getElementById('play-button').style.display = "none";
-    document.getElementById('grid-container').style.display = "block";
+    document.getElementById('grid-container').style.display = "";
     document.getElementById('reset-button').style.display = "block";
 }
 
@@ -24,7 +24,7 @@ function showBoard(){
 function changeValue (id) {
     if(player == 1 && validClick(id) ){
         document.getElementById(id).innerHTML = "X";
-        updateBoard(id, 'X');
+        updateBoard(id,'X');
         player = 2; //changes the current player
     }else if(player == 2 && validClick(id) ){
         document.getElementById(id).innerHTML = "O";
@@ -38,7 +38,7 @@ function changeValue (id) {
 //prevents the symbole from being changed after one click
 function validClick(id){
     var valid = document.getElementById(id).innerHTML;
-    if(valid !== " - "){ //inner text 
+    if(valid != " - "){ //inner text 
         return false;
     }else{
         return true;
