@@ -25,13 +25,14 @@ function changeValue (id) {
     if(player == 1 && validClick(id) ){
         document.getElementById(id).innerHTML = "X";
         updateBoard(id,'X');
+        findWinner();
         player = 2; //changes the current player
     }else if(player == 2 && validClick(id) ){
         document.getElementById(id).innerHTML = "O";
         updateBoard(id,'O');
+        findWinner();
         player = 1; //changes player
     }
-    console.log(board.toString());
 }
 
 //Checks wheather the move is valid or not
@@ -77,4 +78,36 @@ function updateBoard (id, gridsymbol) {
         break;       
                
 }
+}
+
+function findWinner () {
+    var gameOver = isWinner();
+    if(gameOver){
+        console.log("Winner!")
+    }
+}
+
+function isWinner () {
+    //checks if 3 connected in rows
+    for(let i = 0; i < board.length; i++){
+        if(board[i][0] === board[i][1] && board[i][1] === board[i][2] && board[i][2] != '-'){
+            return true;
+        }
+    }
+    //checks if 3 connected in columns
+    for(let i = 0; i < board.length; i++){
+        if(board[0][i] === board[1][i] && board[1][i] === board[2][i] && board[2][i] != '-'){
+            return true;
+        }
+    }
+    //checks if 3 connected diagonal right
+    if(board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[2][2] != '-'){
+        return true;
+    }
+    //checks if 3 connected diagonal left
+    if(board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[2][0] != '-'){
+        return true;
+    }
+
+    return false;
 }
