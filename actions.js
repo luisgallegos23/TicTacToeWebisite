@@ -111,3 +111,17 @@ function isWinner () {
 
     return false;
 }
+
+//resets both the game board and array board
+function resetBoard () {
+    for(var x = 0; x < board.length; x++){ //changes the board arr back to empty
+        for(var y = 0; y < board.length; y++){
+            board[x][y] = '-';
+        }
+    }
+
+    var grids =  document.getElementsByClassName( 'grid' ); //changes all the grid coordinates back to ' - '
+    [].slice.call( grids ).forEach(function ( div ) {
+        div.innerHTML = ' - ';
+    });
+}
