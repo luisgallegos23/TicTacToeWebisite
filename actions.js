@@ -45,7 +45,7 @@ function validClick(id){
     }
 }
 
-//updates the array board 
+//updates the array object
 function updateBoard (id, gridsymbol) {
     switch (id) {
     case 'b1': 
