@@ -1,7 +1,6 @@
 body{
-    background-image: url("tic.jpeg");
-    background-position: center;
-    background-size: cover;
+    background-image: url("art.png");
+    background-repeat: no-repeat;
 }
 .container{
     color: black;
@@ -21,7 +20,7 @@ body{
 
 #title{
     font-size: 4em;
-    text-shadow: 0px 0px 30px white,0px 0px 30px black,0px 0px 30px white,0px 0px 10px #553300,0px 0px 10px black;
+    text-shadow: 0px 0px 30px white,0px 0px 30px black,0px 0px 30px white,0px 0px 10px black,0px 0px 10px black;
     font-weight: bold;
 }
 
@@ -45,12 +44,15 @@ p{
 }
 
 input[type=button]{
+    background-color: darkorange;
     font-size: 20px;
     border-radius: 10px;
     position:absolute;
     bottom: 4em;
     left: 9em;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border: black solid 2px;
 }
 
 #grid-container{
