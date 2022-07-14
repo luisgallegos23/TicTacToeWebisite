@@ -10,6 +10,7 @@
 <body>
     <div class="container">
        <h1 id="title"> Tic Tac Toe </h1>
+       <!-- Instructions board -->
        <div id="insturctions" class="inst-cont">
             <h4>Instructions: </h4>
             <p>1. First Player is an "X".<br>
@@ -20,21 +21,32 @@
             <br>
             <br>
        </div>
+
        <input id="play-button" type="button" value="PLAY GAME" onclick="showBoard()">
 
+       <!-- TIKTAKTOE Board -->
        <div id="grid-container">
             <div id = "b1" class="grid" onclick="changeValue(this.id)"> - </div>
             <div id = "b2" class="grid" onclick="changeValue(this.id)"> - </div>
             <div id = "b3" class="grid" onclick="changeValue(this.id)"> - </div>
             <div id = "b4" class="grid" onclick="changeValue(this.id)"> - </div>
-            <div id = "b5"class="grid" onclick="changeValue(this.id)"> - </div>
+            <div id = "b5" class="grid" onclick="changeValue(this.id)"> - </div>
             <div id = "b6" class="grid" onclick="changeValue(this.id)"> - </div>
             <div id = "b7" class="grid" onclick="changeValue(this.id)"> - </div>
             <div id = "b8" class="grid" onclick="changeValue(this.id)"> - </div>
             <div id = "b9" class="grid" onclick="changeValue(this.id)"> - </div>
         </div>
+
         <input id="reset-button" type="button" value="RESET" onclick="resetBoard()">
+
+        <!-- Winner Board -->
+        <div id="Winner">
+            <h1 id="playerwinner"> </h1>
+        </div>
+        <input id="play-again" type="button" value="Play Again" onclick="playGameAgain()" >
     </div>
+
+
     <script src="actions.js"></script>
 </body>
 </html>

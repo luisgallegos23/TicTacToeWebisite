@@ -6,9 +6,10 @@ var board = [
 ];
 
 //Hides the board upon the window loading 
-window.onload = function (){
+window.onload = function  hideItems (){
     document.getElementById('grid-container').style.display = "none";
     document.getElementById('reset-button').style.display = "none";
+    setUpWindow();
     console.log("Hidden");
 }
 
@@ -83,6 +84,10 @@ function updateBoard (id, gridsymbol) {
 function findWinner () {
     var gameOver = isWinner();
     if(gameOver){
+        document.getElementById("Winner").style.display = "";
+        document.getElementById("playerwinner").innerHTML = `WINNER: Player ${player}`;
+        document.getElementById("playerwinner").style.display = ""; 
+        document.getElementById("play-again").style.display = "";      
         console.log("Winner!")
     }
 }
@@ -124,4 +129,18 @@ function resetBoard () {
     [].slice.call( grids ).forEach(function ( div ) {
         div.innerHTML = ' - ';
     });
+}
+
+function setUpWindow () {
+    document.getElementById('Winner').style.display = "none";
+    document.getElementById("playerwinner").style.display = "none";
+    document.getElementById("play-again").style.display = "none";
+    console.log("Hidden");
+}
+
+//Restores the board in order to play again
+function playGameAgain () {
+    resetBoard();
+    setUpWindow();
+    player = 1;
 }
