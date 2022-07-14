@@ -1,5 +1,5 @@
 var player = 1;
-var board = [
+var board = [ //arr used to represent the current board
     ['-','-','-'],
     ['-','-','-'],
     ['-','-','-'],
@@ -10,7 +10,6 @@ window.onload = function  hideItems (){
     document.getElementById('grid-container').style.display = "none";
     document.getElementById('reset-button').style.display = "none";
     setUpWindow();
-    console.log("Hidden");
 }
 
 //hides the instructions and shows the board 
@@ -81,6 +80,7 @@ function updateBoard (id, gridsymbol) {
 }
 }
 
+//if there is a winner the game will end and states which player one
 function findWinner () {
     var gameOver = isWinner();
     if(gameOver){
@@ -88,10 +88,15 @@ function findWinner () {
         document.getElementById("playerwinner").innerHTML = `WINNER: Player ${player}`;
         document.getElementById("playerwinner").style.display = ""; 
         document.getElementById("play-again").style.display = "";      
-        console.log("Winner!")
+    }else if(catWin()){
+        document.getElementById("Winner").style.display = "";
+        document.getElementById("playerwinner").innerHTML = `NO WINNER!`;
+        document.getElementById("playerwinner").style.display = ""; 
+        document.getElementById("play-again").style.display = "";  
     }
 }
 
+// Checks if a player has connected three in a row to win the game
 function isWinner () {
     //checks if 3 connected in rows
     for(let i = 0; i < board.length; i++){
@@ -113,7 +118,6 @@ function isWinner () {
     if(board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[2][0] != '-'){
         return true;
     }
-
     return false;
 }
 
@@ -131,11 +135,11 @@ function resetBoard () {
     });
 }
 
+//method used to set up the front-end to play again
 function setUpWindow () {
     document.getElementById('Winner').style.display = "none";
     document.getElementById("playerwinner").style.display = "none";
     document.getElementById("play-again").style.display = "none";
-    console.log("Hidden");
 }
 
 //Restores the board in order to play again
@@ -143,4 +147,22 @@ function playGameAgain () {
     resetBoard();
     setUpWindow();
     player = 1;
+}
+
+//Checks if board is full and no moves left
+function catWin (){
+    var count = 0;
+    for(var x = 0; x < board.length; x++){ //changes the board arr back to empty
+        for(var y = 0; y < board.length; y++){
+            if(board[x][y] !== '-'){
+                count ++;
+            }else{
+                break;
+            }
+        }
+    }
+    if (count === 9){
+        return true;
+    }
+    return false;
 }
